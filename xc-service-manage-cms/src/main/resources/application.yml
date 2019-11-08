@@ -6,3 +6,4 @@ spring:
   data:
     mongodb:
       uri:  mongodb://localhost:27017/xc_cms
+      database: xc_cms

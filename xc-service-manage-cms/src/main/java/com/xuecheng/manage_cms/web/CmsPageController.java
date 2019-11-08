@@ -12,6 +12,7 @@ import com.xuecheng.manage_cms.service.PageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,5 +53,10 @@ public class CmsPageController implements CmsPageControllerApi {
     public ResponseResult deleteById(@PathVariable("id") String id) {
         return  pageService.deleteById(id);
 
+    }
+    @Override
+    @GetMapping("/getPageHtml/{id}")
+    public String getPageHtml(@PathVariable("id") String pageId) throws IOException {
+        return pageService.getPageHtml(pageId);
     }
 }
